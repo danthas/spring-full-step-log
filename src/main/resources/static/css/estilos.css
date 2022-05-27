@@ -1,0 +1,18 @@
+.rojo {
+    color: red;
+}
+.negrita {
+    font-weight: bold;
+}
+.borde {
+    border: 2px solid lightgray;
+    width: 55%;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
+.exito {
+    color: green;
+    font-weight: bold;
+}

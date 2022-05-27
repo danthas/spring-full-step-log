@@ -1,0 +1,24 @@
+<div th:fragment="confirmarBorrado" class="modal fade" th:attr="id=${metodo}+${id}"
+     tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 th:text="#{formGlobal.ventana.cuidado}" class="modal-title rojo" id="modalLabel"/>
+                <button type="button" class="close" style="background: none; border: none;" data-dismiss="modal" aria-label="Close">
+                    <img th:src="@{/img/cerrar.png}" width="15px" height="15px" style="background: none; ">
+                </button>
+            </div>
+            <div class="modal-body">
+                <span th:text="#{formGlobal.ventana.frase}"/>
+                <span class="negrita" th:text="${nombre}"/>
+                <br/>
+                <br/>
+                <span class="negrita" th:text="#{formGlobal.ventana.advertencia}"/>
+            </div>
+            <div class="modal-footer">
+                <button th:text="#{formGlobal.boton.cancelar}" type="button" class="btn btn-secondary" data-dismiss="modal"/>
+                <a th:text="#{formGlobal.boton.eliminar}" class="btn btn-danger" th:attr="href=${ruta}+${id}" />
+            </div>
+        </div>
+    </div>
+</div>

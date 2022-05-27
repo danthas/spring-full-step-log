@@ -1,0 +1,12 @@
+<div th:fragment="cabecera">
+    <span class="negrita" th:text="${bienvenida}"/>
+    <span th:text="${ultimoUser}"/>
+    <br/>
+    <span class="negrita" th:text="#{formGlobal.cabecera.contador}"/>
+    <span th:text="${contador}"/>
+    <br/>    <span class="negrita" th:text="#{formGlobal.cabecera.ip}"/>
+    <span th:text="${ip}"/>
+    <br/>
+    <span class="negrita" th:text="#{formGlobal.cabecera.navegador}"/>
+    <span th:text="${navegador}"/>
+</div>

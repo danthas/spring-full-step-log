@@ -1,0 +1,6 @@
+<div th:fragment="navegacion">
+    <a th:text="#{formGlobal.boton.usuario}" th:href="@{/usuario/listarUser}" class="btn btn-dark btn-lg"></a>
+    <a th:text="#{formGlobal.boton.departamento}" th:href="@{/departamento/listarDep}" class="btn btn-dark btn-lg"></a>
+    <a th:text="#{formGlobal.boton.pais}" th:href="@{/pais/listarPais}" class="btn btn-dark btn-lg"></a>
+    <a th:text="#{formGlobal.boton.desconectar}" href="/acceso/logout" class="btn btn-danger btn-lg" style="float: right;"/>
+</div>
