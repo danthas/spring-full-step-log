@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long> {
     /**
      * Declaracion de un metodo de abstracto
-     * para listar un Pais por id
+     * para listar un Usuario por id
      * @param id
      * @return
      */
