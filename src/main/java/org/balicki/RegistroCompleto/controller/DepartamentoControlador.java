@@ -69,7 +69,7 @@ public class DepartamentoControlador {
                 e.printStackTrace();
             }
             String navegador = solicitudHttp.getHeader("user-agent");
-            Colecciones.generaCookies(_id, sesionHttp, solicitudHttp, respuestaHttp, mAV);
+            Colecciones.generaCookies(_id, sesionHttp, solicitudHttp, respuestaHttp, mAV, messageSource);
             mAV.addObject("ultimoUser", Colecciones.ultimoUser);
             mAV.addObject("contador", Colecciones.cont);
             mAV.addObject("ip", ip);

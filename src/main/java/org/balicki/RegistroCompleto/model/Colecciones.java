@@ -6,6 +6,8 @@ import org.balicki.RegistroCompleto.exception.InformacionExcepciones;
 import org.balicki.RegistroCompleto.service.DepartamentoServicio;
 import org.balicki.RegistroCompleto.service.PaisServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
@@ -89,7 +91,8 @@ public class Colecciones {
                                      HttpSession sesionHttp,
                                      HttpServletRequest solicitudHttp,
                                      HttpServletResponse respuestaHttp,
-                                     ModelAndView mAV) {
+                                     ModelAndView mAV,
+                                     MessageSource messageSource) {
         UsuarioLoginDTO usuarioLoginDTO;
         usuarioLoginDTO = (UsuarioLoginDTO) sesionHttp.getAttribute("usuarioLoginDTO");
         if (_id != null && ultimoUser.equals(usuarioLoginDTO.getCorreo())) {
@@ -101,7 +104,8 @@ public class Colecciones {
             contador.setPath("/");
             respuestaHttp.addCookie(id);
             respuestaHttp.addCookie(contador);
-            mAV.addObject("bienvenida", "Bienvenido de nuevo:");
+            mAV.addObject("bienvenida", messageSource.getMessage("formGlobal.cabecera.bienvenidaNuevo", null,
+                    "ERROR: Label not found", LocaleContextHolder.getLocale()));
         } else {
             cont = 1;
             id = new Cookie("_id", generaCadenaAlfanumericaAleatoria(64));
@@ -110,7 +114,8 @@ public class Colecciones {
             contador.setPath("/");
             respuestaHttp.addCookie(id);
             respuestaHttp.addCookie(contador);
-            mAV.addObject("bienvenida", "Bienvenido por primera vez:");
+            mAV.addObject("bienvenida", messageSource.getMessage("formGlobal.cabecera.bienvenidaPrimera", null,
+                    "ERROR: Label not found", LocaleContextHolder.getLocale()));
         }
         ultimoUser = usuarioLoginDTO.getCorreo();
     }
